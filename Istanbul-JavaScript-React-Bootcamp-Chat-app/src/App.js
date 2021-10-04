@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import Login from "./pages/Login";
 import Chat from "./pages/Chat";
@@ -81,11 +80,19 @@ function App() {
         }}
       >
         <Switch>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="/chat">
-            <Chat></Chat>
+          <Route path="/">
+            {localStorage.getItem("user") == null ? (
+              <Redirect to="/login"></Redirect>
+            ) : (
+              <Redirect to="/chat"></Redirect>
+            )}
+            <Route path="/login">
+              {" "}
+              <Login></Login>
+            </Route>
+            <Route path="/chat">
+              <Chat></Chat>
+            </Route>
           </Route>
         </Switch>
       </UserContext.Provider>
