@@ -1,1 +1,1 @@
-# berayilmazyurt.netlify.app
+# https://www.berayilmazyurt.netlify.app
